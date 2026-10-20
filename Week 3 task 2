@@ -1,0 +1,50 @@
+/*
+name:Reginald kipkorir 
+reg no:CT101/G/28187/25
+Description:water billing system
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void getCustomerDetails(string &name, double &units) {
+    cout << "Enter customer name: ";
+    getline(cin, name);
+
+    cout << "Enter units consumed: ";
+    cin >> units;
+}
+
+double calculateBill(double units, double rate) {
+    return units * rate;
+}
+
+double applyDiscount(double bill, double units) {
+    if (units > 100)
+        return bill * 0.10;
+
+    return 0;
+}
+
+int main() {
+    string name;
+    double units, rate, bill, discount, finalAmount;
+
+    getCustomerDetails(name, units);
+
+    cout << "Enter rate per unit: ";
+    cin >> rate;
+
+    bill = calculateBill(units, rate);
+    discount = applyDiscount(bill, units);
+    finalAmount = bill - discount;
+
+    cout << "\nCustomer: " << name << endl;
+    cout << "Units: " << units << endl;
+    cout << "Bill Before Discount: " << bill << endl;
+    cout << "Discount: " << discount << endl;
+    cout << "Amount Payable: " << finalAmount << endl;
+
+    return 0;
+}
