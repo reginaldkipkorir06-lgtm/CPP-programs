@@ -1,0 +1,54 @@
+/*
+reginald kipkorir
+ct101/g/28187/25
+payroll system 
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void getEmployeeDetails(string &name, double &salary, double &hours) {
+    cout << "Enter employee name: ";
+    getline(cin, name);
+
+    cout << "Enter basic salary: ";
+    cin >> salary;
+
+    cout << "Enter overtime hours: ";
+    cin >> hours;
+}
+
+double calculateOvertimePay(double hours, double rate) {
+    return hours * rate;
+}
+
+double calculateNetSalary(double salary, double overtimePay) {
+    return salary + overtimePay;
+}
+
+void displayPayslip(string name, double salary,
+                    double overtime, double net) {
+    cout << "\n----- PAYSLIP -----" << endl;
+    cout << "Employee: " << name << endl;
+    cout << "Basic Salary: " << salary << endl;
+    cout << "Overtime Pay: " << overtime << endl;
+    cout << "Net Salary: " << net << endl;
+}
+
+int main() {
+    string name;
+    double salary, hours, rate, overtimePay, netSalary;
+
+    getEmployeeDetails(name, salary, hours);
+
+    cout << "Enter overtime rate per hour: ";
+    cin >> rate;
+
+    overtimePay = calculateOvertimePay(hours, rate);
+    netSalary = calculateNetSalary(salary, overtimePay);
+
+    displayPayslip(name, salary, overtimePay, netSalary);
+
+    return 0;
+}
