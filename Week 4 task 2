@@ -1,0 +1,39 @@
+/*
+NAME:REGINALD KIPKORIR 
+REG NO:CT101/G/28287/25
+DESCRIPTION:SAVINGS WITHDRAWAL SYSTEM (while loop)
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double balance, withdrawal;
+
+    cout << "Enter account balance: ";
+    cin >> balance;
+
+    while (balance > 0) {
+        cout << "Enter amount to withdraw: ";
+        cin >> withdrawal;
+
+        if (withdrawal <= 0) {
+            cout << "Enter a valid withdrawal amount." << endl;
+            continue;
+        }
+
+        if (withdrawal > balance) {
+            cout << "Insufficient balance." << endl;
+            break;
+        }
+
+        balance -= withdrawal;
+
+        cout << "Remaining balance: " << balance << endl;
+    }
+
+    if (balance == 0)
+        cout << "Account balance is zero." << endl;
+
+    return 0;
+}
