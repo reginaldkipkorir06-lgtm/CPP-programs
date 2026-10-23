@@ -1,0 +1,35 @@
+/*
+NAME:REGINALD KIPKORIR 
+REG NO:CT101/G/28187/25
+DESCRIPTION:EMPLOYEES BONUS SYSTEM
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name;
+    double salary, bonus, totalSalary;
+
+    for (int i = 1; i <= 5; i++) {
+        cout << "\nEmployee " << i << endl;
+
+        cout << "Enter employee name: ";
+        cin >> ws;
+        getline(cin, name);
+
+        cout << "Enter basic salary: ";
+        cin >> salary;
+
+        bonus = 0.05 * salary;
+        totalSalary = salary + bonus;
+
+        cout << "Name: " << name << endl;
+        cout << "Basic Salary: " << salary << endl;
+        cout << "Bonus: " << bonus << endl;
+        cout << "Total Salary: " << totalSalary << endl;
+    }
+
+    return 0;
+}
